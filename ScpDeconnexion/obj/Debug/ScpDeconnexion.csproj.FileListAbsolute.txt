@@ -28,7 +28,6 @@ C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDec
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\Unity.TextMeshPro.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\Unity.Postprocessing.Runtime.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\CommandSystem.Core.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\UnityEngine.TextRenderingModule.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\zxing.unity.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\sc.posteffects.runtime.dll

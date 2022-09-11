@@ -30,6 +30,8 @@ namespace ScpDeconnexion
             Log.Debug("Hello ! i'm actually Registering All Events and List...", Config.Debug);
             Log.Debug("Loaded !",Config.Debug);
             Handlers = new EventHandlers();
+            Event.Map.AnnouncingScpTermination += Handlers.ScpTerminationAnnouncement;
+            Event.Player.SpawningRagdoll += Handlers.SpawnRagdoll;
             Event.Player.Left += Handlers.Disconnect;
             base.OnEnabled();
         }
@@ -37,6 +39,8 @@ namespace ScpDeconnexion
         {
             Log.Info("goodbye !");
             Event.Player.Left -= Handlers.Disconnect;
+            Event.Map.AnnouncingScpTermination -= Handlers.ScpTerminationAnnouncement;
+            Event.Player.SpawningRagdoll -= Handlers.SpawnRagdoll;
             Handlers = null;
             Singleton = null;
             base.OnDisabled();
