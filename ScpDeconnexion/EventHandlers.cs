@@ -1,4 +1,5 @@
 ﻿using Exiled.API.Features;
+using Exiled.API.Features.Roles;
 using Exiled.Events.EventArgs;
 using MEC;
 using System;
@@ -9,8 +10,17 @@ namespace ScpDeconnexion
 {
     public class EventHandlers
     {
+        //variable using for anti-spawn ragdoll and Scp Termination Announcement.
         public bool HasQuitted = false;
         public Player QuittedPlayer;
+
+        //variable using for scp 079.
+        float Experience;
+        float Energy;
+        float MaxEnergy;
+        byte Level;
+        Exiled.API.Features.Camera camera;
+        Mirror.SyncList<uint> door;
 
         public List<Player> SpectatorPlayer = new List<Player>();
 
@@ -24,7 +34,10 @@ namespace ScpDeconnexion
                 {
                     if (plr != ev.Player)
                     {
-                        SpectatorPlayer.Add(plr);
+                        if (plr.Role.Type == RoleType.Spectator)
+                        {
+                            SpectatorPlayer.Add(plr);
+                        }
                     }
                 }
                 System.Random random = new System.Random();
@@ -42,38 +55,51 @@ namespace ScpDeconnexion
                     float Maxahp = ev.Player.MaxArtificialHealth;
                     Player quitter = ev.Player;
                     RoleType quitterRole = ev.Player.Role.Type;
-                    Timing.RunCoroutine(SpawnProperties(chech, position, scale, hp, rotation, maxhp, Ahp, Maxahp, quitter, quitterRole));
+                    if (ev.Player.Role is Scp079Role Scp)
+                    {
+                        Experience = Scp.Experience;
+                        Level = Scp.Level;
+                        Energy = Scp.Energy;
+                        MaxEnergy = Scp.MaxEnergy;
+                        door = Scp.LockedDoors;
+                        camera = Scp.Camera;
+                    }
+                    Timing.CallDelayed(0.5f, () =>
+                    {
+                        if (ev.Player.Role.Type != RoleType.Scp079)
+                        {
+                            chech.Position = position;
+                            chech.Health = hp;
+                            chech.MaxHealth = maxhp;
+                            chech.Rotation = rotation;
+                            chech.ArtificialHealth = Ahp;
+                            chech.MaxArtificialHealth = Maxahp;
+                            chech.Scale = scale;
+                        }
+                        else if (ev.Player.Role is Scp079Role scp079)
+                        {
+                            scp079.Level = Level;
+                            scp079.Experience = Experience;
+                            scp079.Camera = camera;
+                            scp079.MaxEnergy = MaxEnergy;
+                            scp079.Energy = Energy;
+                            scp079.LockedDoors = door;
+                        }
+                        foreach (Player player in Player.List)
+                        {
+                            if (player.Role.Side == Exiled.API.Enums.Side.Scp)
+                            {
+                                player.Broadcast(5, $"Scp Disconnect Alert \n<size=30>{quitterRole} ({quitter.Nickname}) has disconnect and Replace by {chech.Nickname}</size>");
+                            }
+                        }
+                        HasQuitted = false;
+                        QuittedPlayer = null;
+                    });
                     SpectatorPlayer.Clear();
                 }
                 
 
             }
-
-
-        }
-
-        public IEnumerator<float> SpawnProperties(Player ev, Vector3 position,Vector3 scale,float hp,Vector3 rotation,int maxhp,float Ahp,float MaxAhp,Player quitter,RoleType quitterRole)
-        {
-            yield return Timing.WaitForSeconds(0.5f);
-            if (ev.Role.Type != RoleType.Scp079)
-            {
-                ev.Position = position;
-                ev.Health = hp;
-                ev.MaxHealth = maxhp;
-                ev.Rotation = rotation;
-                ev.ArtificialHealth = Ahp;
-                ev.MaxArtificialHealth = MaxAhp;
-                ev.Scale = scale;
-            }
-            foreach (Player player in Player.List)
-            {
-                if (player.Role.Side == Exiled.API.Enums.Side.Scp)
-                {
-                    player.Broadcast(5, $"Scp Disconnect Alert \n<size=30>{quitterRole} ({quitter.Nickname}) has disconnect and Replace by {ev.Nickname}</size>");
-                }
-            }
-            HasQuitted = false;
-            QuittedPlayer = null;
         }
         public void SpawnRagdoll(SpawningRagdollEventArgs ev)
         {

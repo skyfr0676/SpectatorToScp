@@ -16,7 +16,6 @@ C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDec
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\UnityEngine.CoreModule.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\UnityEngine.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\YamlDotNet.dll
-C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\UnityEngine.PhysicsModule.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\UnityEngine.ParticleSystemModule.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\UnityEngine.AudioModule.dll
 C:\Users\Utilisateur\Documents\GitHub\AntiScpDisconnection\SpectatorToScp\ScpDeconnexion\bin\Debug\UnityEngine.UnityWebRequestModule.dll
