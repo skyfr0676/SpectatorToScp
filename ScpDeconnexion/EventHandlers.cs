@@ -89,7 +89,7 @@ namespace ScpDeconnexion
                         {
                             if (player.Role.Side == Exiled.API.Enums.Side.Scp)
                             {
-                                player.Broadcast(5, $"Scp Disconnect Alert \n<size=30>{quitterRole} ({quitter.Nickname}) has disconnect and Replace by {chech.Nickname}</size>");
+                                player.Broadcast(5, $"{Plugin.Singleton.Config.ScpDeconnextionTitle}\n<size={Plugin.Singleton.Config.DescriptionSize}>{quitterRole} ({quitter.Nickname}){Plugin.Singleton.Config.ScpDeconnextionDescription}{chech.Nickname}</size>");
                             }
                         }
                         HasQuitted = false;
