@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ScpDeconnexion</RootNamespace>
     <AssemblyName>ScpDeconnexion</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,42 +32,57 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\dependencies\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\dependencies\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    <Reference Include="Assembly-CSharp-Publicized">
+      <HintPath>..\..\..\..\..\Tools\C#\SCPSL plugins\Assembly-CSharp-Publicized.dll</HintPath>
     </Reference>
-    <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Reference Include="Exiled.API">
-      <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
+    <Reference Include="Exiled.API, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.CreditTags">
-      <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.CreditTags.dll</HintPath>
+    <Reference Include="Exiled.CreditTags, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.CreditTags.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.CustomItems">
-      <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.CustomItems.dll</HintPath>
+    <Reference Include="Exiled.CustomItems, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.CustomItems.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.CustomRoles">
-      <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.CustomRoles.dll</HintPath>
+    <Reference Include="Exiled.CustomRoles, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.CustomRoles.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Events">
-      <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.Events.dll</HintPath>
+    <Reference Include="Exiled.Events, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.Events.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Permissions">
-      <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.Permissions.dll</HintPath>
+    <Reference Include="Exiled.Permissions, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.Permissions.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Updater">
-      <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.Updater.dll</HintPath>
+    <Reference Include="Exiled.Updater, Version=3.1.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AppData\Roaming\EXILED\Plugins\Exiled.Updater.dll</HintPath>
     </Reference>
     <Reference Include="Mirror">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\Mirror.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NorthwoodLib, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\NorthwoodLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PluginAPI">
+      <HintPath>..\..\..\..\..\Tools\C#\SCPSL plugins\PluginAPI.dll</HintPath>
     </Reference>
     <Reference Include="SemVer">
       <HintPath>..\..\..\..\..\AppData\Roaming\EXILED\Plugins\dependencies\SemVer.dll</HintPath>
